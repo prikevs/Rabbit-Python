@@ -13,10 +13,16 @@ class RabbitTests(unittest.TestCase):
         converted = Rabbit.uni2zg(u"မင်္ဂလာပါ")
         self.assertEqual(converted, u"မဂၤလာပါ")
 
+        converted = Rabbit.uni2zg(u"ပြင်သစ်ဘာသာကီးဘုတ်")
+        self.assertEqual(converted, u"ျပင္သစ္ဘာသာကီးဘုတ္")
+
     def test_zg2uni(self):
         print("converting Zawgyi to Unicode")
         converted = Rabbit.zg2uni(u"မဂၤလာပါ")
         self.assertEqual(converted, u"မင်္ဂလာပါ")
+
+        converted = Rabbit.zg2uni(u"ျပင္သစ္ဘာသာကီးဘုတ္")
+        self.assertEqual(converted, u"ပြင်သစ်ဘာသာကီးဘုတ်")
 
 if __name__ == "__main__":
     unittest.main()
